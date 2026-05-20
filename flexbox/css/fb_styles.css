@@ -35,9 +35,9 @@ p#home-btn a {
     margin: 10px;
 }
 
-.flexcontainer {
+#flex-container {
     min-height: 300px;
-    border: 2px solid yellowgreen;
+    border: 2px solid white;
     border-radius: 10px;
 }
 
@@ -68,7 +68,6 @@ body{
     padding-right: 50px;
 }
 
-
 /*
 Target h3 and b tags to set font color to #068FFF and add text-decoration of underline
 */
@@ -76,7 +75,6 @@ h3,b{
     color:#068FFF;
     text-decoration: underline;}
     
-
 /*
 Add a top border of 2px width to the footer. Use #ECDFCC as color of border
 Set the font color of all the text in footer to #424242, font size of 0.7rem and align all the text to the center of the screen.
@@ -90,9 +88,9 @@ footer{
     text-align:center;
 }
 
+
 footer ul{
     list-style: none;
-
 }
 
 /*
@@ -173,7 +171,6 @@ Target comment class to set font color to gray
 }
 
 
-
 /*
 Target playground id to set background color to #AFC8AD border radius to 10px width of 100% and min-height to 300px
 */
@@ -204,6 +201,87 @@ target flex-item class to set width and height to 50px, border radius of 5px, ba
     border-radius: 5px;
     background-color: #F5F5F7;
     margin: 5px;
+}
+
+
+#flex-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+.grow{
+    flex-grow: 2;
+}
+
+.grow-3{
+    flex-grow: 3;
+}
+
+.basis-2{
+    flex-basis:2rem;
+    background-color: orange;
+}
+
+.shrink-3{
+    flex-shrink:3;
+    background-color:aqua;
+}
+
+.align-self-end{
+    align-self:flex-end;
+    background-color:red;
+}
+
+
+
+/*exercise*/
+
+.flexcontainer{
+    display:flex;
+    justify-content: space-between;
+    border:2px solid #2cef8e;
+    border-radius: 5px;
+    min-height: 300px;
+    /*Align all the boxes to the vertical-center of the container.*/
+    align-items: center;
+}
+
+/*Align the text inside the boxes to the center (horizontal as well as vertical) of box.*/
+.flexitem > p {
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/*Grow "Box 2" and "Box 4' to cover all the remaining space left after arranging box 1,3 and 5*/
+#two{
+    flex-grow:2;
+    
+}
+
+#four {
+    flex-grow: 4;
+}
+
+/*Move "Box 3" to the bottom of the container*/
+#three{
+    align-self:flex-end;
+}
+
+
+#one, #three, #five{
+    flex-shrink:2;
+}
+
+
+/*Move "Box 1" at the end*/
+#one{
+    order:5;
 }
 
 
