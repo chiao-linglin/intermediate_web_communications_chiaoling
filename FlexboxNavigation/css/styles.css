@@ -1,0 +1,14 @@
+:root {
+    --green: #4CAF50;
+    --whitesome: #f9f9f9;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    padding: 20px 10px;
+    background-color: var(--whitesome);
+
+}
