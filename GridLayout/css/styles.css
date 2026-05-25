@@ -4,10 +4,36 @@ Set the background color to "whitesmoke", font-family to "Chakra Petch" and "san
 */
 
 
+body{
+    width: 80%;
+    margin:0 auto;  
+    background-color: whitesmoke;
+    font-family:"Chakra Petch", "sans-serif" ;
+}
+/*等於 margin-top: 0;
+margin-bottom: 0;
+margin-left: auto;
+margin-right: auto;
+因為 auto等於左右自動平均分配空間,所以當width只有80%, 旁邊就會有空白
+*/
+
+
+
+
 /* 
 Convert the header element into a flex container. Using flexbox properties move heading and text to the center of screen (horizontal-center).
 Set the background color to white, border-radius to 20px, vertical margin of 10px and padding of 10px in all direction. 
 */
+
+header{
+    display: flex;
+    justify-content:center;
+    background-color: white;
+    border-radius: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    padding:10px;
+}
 
 
 /* 
@@ -15,25 +41,57 @@ Convert the footer element into a flex container. Using flexbox properties, move
 Set font-size to 0.7rem and add a top border of 2px with "yellogreen" color.
 */
 
+footer{
+    display: flex;
+    justify-content: center;
+    font-size: 0.7rem;
+    border: 2px solid yellowgreen;
+}
+
 
 /* 
 Using Child-Combinator (>), target ul element inside footer and set list-style to none and a padding of 0.
 */
 
+footer > ul{
+    list-style: none;
+    padding:0;
+
+}
 
 /* 
  Using Descendant-Combinator, target anchor element inside footer to remove all text-decoration and set font color to black.
 */
 
+footer a{
+    text-decoration: none;
+    color:black;
+}
+
 
 /*
 Target section element, set background color to white, vertical margin of 10px, border radius of 20px and padding of 20px in all direction.
 */
+section{
+    background-color: white;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding:20px;
+}
 
 
 /*
 Target "highlight" class, set background color to "lightgrey", vertical padding of 3px and horizontal padding of 5px, border radius of 2px.
 */
+
+highlight{
+    background-color: lightgrey;
+    padding:3px 5px;   /* padding: 上下 左右;*/
+    border-radius: 2px;
+
+   
+}
 
 
 /*
@@ -41,46 +99,100 @@ Target elements with class="example", set background color to "#4A4947", font co
 border radius of 10px and set width should be equal to the width of content.
 */
 
+.example{
+    background-color: #4a4947;
+    color:white;
+    padding:10px;
+    border-radius: 10px; 
+    width:fit-content;  /*元素的寬度會「剛好符合內容大小」。不會撐滿整行,不會固定寬度,內容多大，它就多寬*/ 
+
+}
+
 
 /*
 Target elements with class="comment", set font color to "lightgrey" and font size to 0.9rem.
 */
+.comment{
+    color:lightgrey;
+    font-size:0.9rem;
+}
+
+
 
 
 /*
 Target elements with class="str", set font color to "yellowgreen"
 */
 
+.str{
+    color:yellowgreen;
+}
+
 
 /*
 Target img element to set width to 200px.
 */
+
+img{
+    width:200px;
+}
 
 
 /*
 Target elements with id="playground" and set min height to 500px.
 */
 
+playground{
+    min-height:500px;
+}
+
 
 /* 
 Target elements with class="item", add width and height of 50px, border-radius of 10px and a background color of gray.
 */
+.item{
+    width:50px;
+    height: 50px;
+    border-radius:10px;
+    background-color: gray;
+}
 
 
 /*
 Target element with id="container", add a 10px padding, border of 1px solid black, and border-radius of 20px.
 */
 
+#container{
+    padding:10px;
+    border:1px solid black;
+    border-radius: 20px;
+}
+
 
 /*
 Convert div with id="definitions-container" into a flexbox container and add a gap of 5px.
 */
+#definitions-container{
+    display: flex;   /*原本是三排, 加上 display:flex 後會變一排 再加上gap=5 就有間距*/
+    gap:5px;
+}
 
 
 /*
 Target elements with class="definitions", add black border of 1px width, border radius of 10px, padding of 10px horizontal-margin of 5px.
 */
 
+.definitions{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    flex-basis:50%; /*flex-basis 是 Flexbox 專用的大小設定。,50%等於一開始想佔容器的一半空間。*/
+
+
+}
 
 /*
 Check the "Important Terminology" part of your webpage (see in live server).
@@ -90,17 +202,46 @@ Can you fix this behaviour using flexbox properties so that they get equal width
 Hint: They are inside a flexbox container (id="definitions-container"), this makes them a flex-item.
 */
 
+
+
 /*
 Target elements with class="property" and set the bottom border to 2px dashed gray
  */
+
+.property{
+    border-bottom: 2px dashed grey;
+}
+
 
 
 /*
 Remove the bottom border from element with class="property" if it is the last element of its type among the group of siblings.
  */
 
+ .property:last-child{
+    border-bottom: none;
+}
+
 
 /*
 Target h2 elements, make the text the align of the center (horizontal center) of the screen and add underline to the text. 
  */
 
+ h2{
+    text-align: center;
+    text-decoration: underline;
+ }
+
+
+
+
+ /*playground區域*/
+ #container{
+    display:grid;
+    /* grid-template-columns: 1fr 1fr 2fr 1.5fr; vertical的上下切割, 切成四個欄位 fraction比例單位*/
+
+    grid-template-columns: repeat(4, minmax(100px, 2fr)); /*切成4塊, 最小100px, 最大2fr */
+    grid-template-rows: 5rem 5rem 5rem;
+    
+
+ }
