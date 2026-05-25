@@ -242,6 +242,16 @@ Target h2 elements, make the text the align of the center (horizontal center) of
 
     grid-template-columns: repeat(4, minmax(100px, 2fr)); /*切成4塊, 最小100px, 最大2fr */
     grid-template-rows: 5rem 5rem 5rem;
-    
+    justify-items: center;    /*控制grid裡面每個item*/
+    align-items: center;
+    justify-content: center;  /*控制整個grid*/
+ 
 
+ }
+
+  #five {
+  background-color: red;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  width: 100%;
  }
