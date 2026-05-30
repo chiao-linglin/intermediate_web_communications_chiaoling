@@ -1,0 +1,55 @@
+
+
+
+
+
+body{
+    width:90%;
+    margin: 0 auto;
+    background: lightgreen;
+}
+
+img{
+    float:right;
+
+}
+
+
+section{
+    background-color: white;
+    margin: 20px 0;
+    padding:30px;
+    border-radius: 20px;
+}
+
+.img-container {
+display:flex;
+justify-content:space-around; /*每個元素周圍都有空間*/
+}
+
+
+@media screen and ( width >= 600px) and ( width < 1024px)
+{
+
+body{
+    background-color: red;
+    font-size:0.6rem;
+    font-family: sans-serif;
+}
+.img-container{
+    flex-direction: column;
+}
+    
+
+}
+
+@media  screen and ( width >= 1024px) {
+
+    body{
+        background-color: green;
+        font-size: 1.3rem;
+        font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+    
+}

@@ -1,0 +1,47 @@
+
+
+*, *::before, *::after {
+
+margin:0;
+padding:0;
+box-sizing: border-box;
+
+}
+
+body{
+    width:70%;
+    margin:0 auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+h1{
+    margin:40px;
+    text-align:center;
+}
+
+
+main{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr); /*把main裡面的direct childre分成4份，在這裡是每個section分成一格*/
+    gap:0.8rem; /*每個grid中間會有gap*/
+}
+
+section{
+    background-color:lightgreen;
+    border: 3px solid darkgreen;
+    border-radius:10px;
+    padding: 0.1rem;
+}
+
+
+.grid-row-span-2 {
+    grid-row: span 2;
+    align-content: center; /*把+變成垂直置中*/
+}
+
+.grid-column-span-4{
+    grid-column:span 4;
+    justify-content: center;
+}
+

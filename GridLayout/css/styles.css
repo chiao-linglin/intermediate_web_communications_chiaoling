@@ -253,5 +253,5 @@ Target h2 elements, make the text the align of the center (horizontal center) of
   background-color: red;
   grid-column-start: 1;
   grid-column-end: 1;
-  width: 100%;
+  width: 100%; /*佔據整個grid*/
  }
