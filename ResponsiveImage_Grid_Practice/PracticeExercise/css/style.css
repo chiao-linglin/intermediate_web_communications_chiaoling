@@ -1,0 +1,96 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+header {
+    background: linear-gradient(to right, rgb(242, 171, 72), rgb(148, 247, 148));
+    padding: 20px;
+    margin-block-end: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background: linear-gradient(to right, rgb(242, 171, 72), rgb(148, 247, 148));
+    padding: 20px;
+}
+
+img {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    margin-block-end: 20px;
+}
+
+
+
+main{
+    width: 90%;
+    margin: 0 auto;
+    margin-block-end: 20px;    /*main 底部保留 20px 間距*/
+    flex-grow: 1;       /* 撐滿剩餘高度 */ 
+}
+
+
+.sample-img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover; 
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+}
+
+.img-container {
+    width: 100%;
+    overflow: hidden; /*超出容器的圖片裁掉*/
+    border-radius: 20px;
+
+}
+
+@media screen and (min-width:768px) {
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width:1200px) {
+    .grid-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+.four{
+    grid-column: 3 /-1; 
+/*grid-column: 起始線 / 結束線;
+3 = 從第 3 條垂直格線開始
+-1 = 最後一條格線（倒數第一條）在這個題目其實就是 第四條 */
+    grid-row: 1/ span 2;
+}
+
+.three{
+    grid-column: 1 / span 2;  /*從起始位置開始，跨越（佔據）幾個欄位或列, span2等於佔兩格。, 等於 1/3*/
+    grid-row: 2/3;
+
+}
+}
+
+
+
+
+
+
+

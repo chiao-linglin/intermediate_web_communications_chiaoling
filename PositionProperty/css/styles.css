@@ -1,0 +1,146 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(209, 209, 209);
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, rgba(114, 114, 248, 0.914), rgba(175, 114, 1, 0.738));
+    color:rgb(255, 255, 255);
+    height: 700px;
+}
+
+main {
+    flex-grow: 1;
+    width: 95%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, rgba(114, 114, 248), rgba(175, 114, 1));
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+section {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-block-end: 10px;
+    background-color: white;
+}
+
+.expand {
+    width: 100%;
+    height: 600px;
+}
+
+h2 {
+    text-align: center;
+}
+
+code {
+    background: rgb(233, 233, 233);
+    color: rgb(86, 85, 85);
+    padding: 1px 3px;
+}
+
+.lead {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.value-list {
+    padding-inline-start: 20px;
+    list-style: '-> ';
+}
+
+.playground {
+    width: 100%;
+    padding: 20px;
+    background: rgb(227, 226, 226);
+    margin: 25px 0;
+    min-height: 500px;
+    position: relative;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(255, 80, 80);
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.one {
+    background-color: rgb(255, 21, 0);
+}
+
+.two {
+    background-color: orange;
+}
+
+.three {
+    background-color: blue;
+}
+
+.four {
+    background-color: green;
+}
+
+/*以下是新增的code*/
+
+/*
+position:static是預設值, static 不接受定位。
+relative:元素仍保留原本位置，但可以相對於自己原本的位置移動。重點是：元素移動了，但原本佔的位置仍然存在。
+fixed: 絕對定位, 不再佔空間。即使往下捲：它還是在同一個位置。
+absolute:需要參考值(最近 positioned ancestor)
+sticky:介於 relative 與 fixed 之間。
+*/
+.one{
+    position:relative; /*從他原本的位置開始移動*/
+    top:20px;
+    left:30px;
+}
+
+.two{
+    position:fixed; /*看起來是直接從螢幕來定位*/
+    top:150px;
+    right:150px;
+}
+
+.three{
+    position:absolute; 
+    top:150px;
+    right:50px;
+}
+
+
+.four{
+    position:sticky; /*捲到指定位置後黏住*/
+    bottom:3px; /*確保最上方至少有300px, 如果上方比300px小的話, 他就先移動到300px*/
+}

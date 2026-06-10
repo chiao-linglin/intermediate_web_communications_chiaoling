@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+header{
+    grid-area:area1;
+    display:flex; /*把header 變成 Flex Container（彈性容器）,預設情況下，裡面的元素會排列成一排。*/
+    flex-direction:column; /*改變主軸方向，讓子元素改成 由上往下排列。*/
+    justify-content: center; /*上下置中*/
+    align-items: center;  /*左右置中*/
+    padding:20px;  /*內距（內容和邊界的距離）*/
+    background:linear-gradient(to right, rgb(1,1,101), rgb(243,100,63));
+    color:white;
+}
+
+
+main{
+    grid-area:area3;
+    background-color:rgb(87,117,117);
+    padding:10px;
+    margin:10px auto;
+    border-radius:10px;
+}
+
+.sidebar{
+    grid-area:area2;
+    background-color:rgb(87,117,117);
+    padding:10px;
+    margin:10px auto;
+    border-radius:10px;
+}
+
+aside{
+    grid-area:area4;
+    background-color:rgb(87,117,117);
+    padding:10px;
+    margin:10px auto;
+    border-radius:10px;    
+}
+
+footer{
+    grid-area:area5;
+    display:flex; /*把header 變成 Flex Container（彈性容器）,預設情況下，裡面的元素會排列成一排。*/
+    flex-direction:column; /*改變主軸方向，讓子元素改成 由上往下排列。*/
+    justify-content: center; /*上下置中*/
+    align-items: center;  /*左右置中*/
+    padding:20px;  /*內距（內容和邊界的距離）*/
+    background:linear-gradient(to right, rgb(1,1,101), rgb(243,100,63));
+    color:white;
+
+}
+
+
+a {
+    color:white;
+}
+
+body{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "area1" /*header*/
+    "area2" /*sidebar*/
+    "area3" /*main*/
+    "area4" /*aside*/
+    "area5" /*footer*/ 
+    ; 
+}
+
+
+@media screen and (min-width:480px){
+    body{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "area1 area1"
+        "area2 area2"
+        "area3 area4"
+        "area5 area5";
+        gap:10px;
+    }
+}
+
+@media screen and (min-width:769px){
+    body{
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas:
+        "area1 area1 area1"
+        "area2 area3 area4"
+        "area5 area5 area5";
+    }
+}
+
+
